@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif, Courier, monospace;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.swiper-slide {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.service-carousel .swiper-pagination {
+  @apply flex justify-center;
+
+  span {
+    @apply mx-[5px] inline-block h-[10px] w-[10px] cursor-pointer rounded-full border border-white;
+
+    &.swiper-pagination-bullet-active {
+      @apply bg-white;
+    }
+  }
+}
